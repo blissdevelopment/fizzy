@@ -7,7 +7,7 @@
   </div>
   <div class="comment__body txt-align-start full-width">
     <%= form_with model: [@splat, @splat.comments.build], class: "flex flex-column gap full-width" do | form | %>
-      <%= form.text_area :body, class: "input full-width", required: true, placeholder: "Type your comment…", rows: 4, autofocus: true %>
+      <%= form.text_area :body, class: "input full-width", required: true, placeholder: "Type your comment…", rows: 4 %>
 
       <%= form.button class: "btn btn--reversed center" do %>
         <%= image_tag "check.svg", aria: { hidden: "true" }, size: 24%>
