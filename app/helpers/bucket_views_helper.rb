@@ -3,7 +3,7 @@ module BucketViewsHelper
     bubble_filter_params.values.all?(&:blank?) || bubble_filter_params.to_h == Bucket::View.default_filters
   end
 
-  def bucket_view_form_tag(path, method:, id:)
+  def bubble_filter_form_tag(path, method:, id:)
     form_tag path, method: method, id: id do
       yield if block_given?
 

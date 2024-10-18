@@ -1,10 +1,10 @@
 <% view ||= Bucket::View.new %>
 
-<%= bucket_view_form_tag bucket_views_path(bucket), method: :post, id: dom_id(view, :new_form) %>
+<%= bubble_filter_form_tag bucket_views_path(bucket), method: :post, id: dom_id(view, :new_form) %>
 
 <% if view.persisted? %>
-  <%= bucket_view_form_tag bucket_view_path(bucket, view), method: :put, id: dom_id(view, :edit_form) %>
-  <%= bucket_view_form_tag bucket_view_path(bucket, view), method: :delete, id: dom_id(view, :delete_form) %>
+  <%= bubble_filter_form_tag bucket_view_path(bucket, view), method: :put, id: dom_id(view, :edit_form) %>
+  <%= bubble_filter_form_tag bucket_view_path(bucket, view), method: :delete, id: dom_id(view, :delete_form) %>
 <% end %>
 
 <%= button_tag type: :submit, form: dom_id(view, :new_form), class: "btn", style: "font-size: 0.4em;" do %>
