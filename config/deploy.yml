@@ -2,22 +2,21 @@
 service: fizzy
 image: fizzy
 
-
 #-- About your deployment --#
 
 # Where to deploy fizzy
 servers:
   web:
-    - fizzy.example.com  # Set your server name here
+    - 178.156.216.214 # Set your server name here
 
 # How you connect to your server
 ssh:
-  user: root  # If you use a different username to SSH to your server, specify it here
+  user: root # If you use a different username to SSH to your server, specify it here
 
 # Automatic SSL
 proxy:
-  ssl: true                # Set this to false if you *don't* want SSL
-  host: fizzy.example.com  # Set your server name here to use automatic SSL
+  ssl: true # Set this to false if you *don't* want SSL
+  host: fizzy.blissdevelopment.com # Set your server name here to use automatic SSL
 
 # Your application configuration (secrets come from .kamal/secrets).
 env:
@@ -28,12 +27,11 @@ env:
     - SMTP_USERNAME
     - SMTP_PASSWORD
   clear:
-    BASE_URL: https://fizzy.example.com # The public URL of your Fizzy instance
-    MAILER_FROM_ADDRESS: support@example.com # The email "from" address that Fizzy sends email from
-    SMTP_ADDRESS: mail.example.com # The SMTP server you'll use to send email
+    BASE_URL: https://fizzy.blissdevelopment.com # The public URL of your Fizzy instance
+    MAILER_FROM_ADDRESS: support@blissdevelopment.com # The email "from" address that Fizzy sends email from
+    SMTP_ADDRESS: smtp.fastmail.com # The SMTP server you'll use to send email
     MULTI_TENANT: false # Set to true to allow multiple accounts to sign up
     SOLID_QUEUE_IN_PUMA: true # Run background jobs in the app container
-
 
 #-- General configuration --#
 
@@ -52,7 +50,7 @@ aliases:
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
 # Recommended to change this to a mounted volume path that is backed up off server.
 volumes:
-  - "fizzy_storage:/rails/storage"
+  - "/data/fizzy_storage:/rails/storage"
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
 # hitting 404 on in-flight requests. Combines all files from new and old
